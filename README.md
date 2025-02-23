@@ -12,15 +12,18 @@
 
 ├── captcha_images/        # 存储验证码图片
 
-├── name.txt               # 学生姓名列表（每行一个姓名）
+├── LICENSE                # 许可说明
+
+├── README.md              # 本文件
 
 ├── id.txt                 # 学生身份证号列表（每行一个身份证号）
 
-├── result.csv             # 查询结果输出的文件
+├── name.txt               # 学生姓名列表（每行一个姓名）
 
-├── query_scores.py        # Python 程序
+├── xuekao-proxy.py        # Python 程序 (代理版本)
 
-└── README.md              # 本文件
+└── xueka0.py              # Python 程序（标准版本）
+
 
 # 环境要求
 确保你已经安装了以下 Python 库：
@@ -65,6 +68,7 @@ python query_scores.py
 
 
 subject,Chinese,Math,Foreign Language,History,Geography,Political Science,Biology,Chemistry,Physics
+
 110105200801214818,pass,fail,pass,pass,fail,pass,fail,pass,pass
 
 失败的学生： 如果学生查询失败，程序会在控制台输出 查询失败 的学生姓名，并跳过该学生。如果某个学生查询失败 3 次，则会被标记为失败。
@@ -74,8 +78,11 @@ subject,Chinese,Math,Foreign Language,History,Geography,Political Science,Biolog
 
 
 subject,Chinese,Math,Foreign Language,History,Geography,Political Science,Biology,Chemistry,Physics
+
 110105200801214818,pass,fail,pass,pass,fail,pass,fail,pass,pass
+
 110105200801214819,pass,pass,fail,fail,pass,fail,pass,fail,pass
+
 # 5. 输出失败学生
 程序在查询完成后，会输出查询失败的学生列表，显示每个查询失败的学生姓名。
 
@@ -92,21 +99,30 @@ socks5://127.0.0.1:10809
 
 # 7. 配置文件
 name.txt：每行一个学生的姓名。
+
 id.txt：每行一个学生的身份证号码。
+
 result.csv：程序会将查询结果保存到该文件。
+
 # 示例文件格式
 name.txt：
 
 
 张三
+
 李四
+
 王五
+
 id.txt：
 
 
 11010119900101001X
+
 11010119900202002X
+
 11010119900303003X
+
 # 可能出现的问题
 验证码识别错误： 程序会尝试重新获取验证码并识别，直到识别成功。
 
